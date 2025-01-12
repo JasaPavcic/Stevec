@@ -8,21 +8,20 @@ import { Router, RouterOutlet,ActivatedRoute } from '@angular/router';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-  constructor(private router: Router,private route: ActivatedRoute) {}
 
+  username: string | null = '';
+
+  constructor(private router: Router,private route: ActivatedRoute) {
+    this.username = localStorage.getItem('username');
+  }
+
+
+  showPage(page: string){
+    this.router.navigate([page],{ relativeTo: this.route });
+  }
+  
   onLogout(){
+    localStorage.removeItem('currentUser');
     this.router.navigate(['/login']);
-  }
-
-  showPage1(){
-    this.router.navigate(['page1'],{ relativeTo: this.route });
-  }
-
-  showPage2(){
-    this.router.navigate(['page2'],{ relativeTo: this.route });
-  }
-
-  showPage3(){
-    this.router.navigate(['page3'],{ relativeTo: this.route });
   }
 }

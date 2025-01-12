@@ -1,2 +1,15 @@
-<p>login works!</p>
-<button (click) = "onLogin()">Login</button>
+<h2>Login!</h2>
+
+
+<form [formGroup] = "loginForm" (ngSubmit) = "onLogin()">
+    <div>
+        <label for="username">Username:</label>
+        <input
+        id="username"
+        formControlName="username"
+        placeholder="Enter your username"
+        required
+        />
+    </div>
+</form>
+
