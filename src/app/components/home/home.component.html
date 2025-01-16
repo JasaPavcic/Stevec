@@ -1,9 +1,11 @@
 <h2>Welcome to the Home Page</h2>
-<p>{{username}}</p>
+<p>Prijavljen uporabnik: {{username}}</p>
 
-<nav><button (click) = "showPage('page1')">Page1</button>
-<button (click) = "showPage('page2')">Page2</button>
-<button (click) = "showPage('page3')">Page3</button>
+<nav>
+    <button (click) = "showPage('page1')">Page1</button>
+    <button (click) = "showPage('page2')">Page2</button>
+    <button (click) = "showPage('page3')">Page3</button>
+    <button (click) = "showPage('stats')">stats</button>
 </nav>
 
 <router-outlet></router-outlet>
