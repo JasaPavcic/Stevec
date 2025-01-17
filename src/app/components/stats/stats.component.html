@@ -1,2 +1,17 @@
-<p>STATS</p>
-<p>Tukaj bom prikazal statistiko</p>
+<p class="stats-heading">STATS</p>
+
+
+<table class = "stats-table">
+    <thead>
+      <tr>
+        <th>Page</th>
+        <th>Time Spent (seconds)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let entry of user?.timeSpent | keyvalue">
+        <td>{{ entry.key }}</td>
+        <td>{{ entry.value }}</td>
+      </tr>
+    </tbody>
+</table>

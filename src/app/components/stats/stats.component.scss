@@ -1,0 +1,75 @@
+/* Stats Page Styling */
+.stats-heading {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  
+  .stats-subheading {
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #555;
+  }
+  
+  .stats-table {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+  
+    thead {
+      background-color: #007bff;
+      color: white;
+  
+      th {
+        padding: 12px;
+        font-size: 1.1rem;
+        text-align: left;
+        font-weight: 700;
+      }
+    }
+  
+    tbody {
+      tr {
+        transition: background-color 0.3s ease;
+  
+        &:hover {
+          background-color: #f4f4f4; /* Light gray background on hover */
+        }
+  
+        td {
+          padding: 12px;
+          font-size: 1rem;
+          text-align: left;
+          border-bottom: 1px solid #ccc;
+        }
+      }
+    }
+  }
+  
+  /* Responsive Design for small screens */
+  @media (max-width: 600px) {
+    .stats-table {
+      width: 100%;
+      padding: 0 10px;
+    }
+  
+    .stats-heading {
+      font-size: 1.6rem;
+    }
+  
+    .stats-subheading {
+      font-size: 1rem;
+    }
+  
+    .stats-table th,
+    .stats-table td {
+      font-size: 0.9rem;
+      padding: 10px;
+    }
+  }

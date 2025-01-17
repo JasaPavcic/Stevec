@@ -3,6 +3,6 @@ export interface User {
     timeSpent: {
         page1: number;
         page2: number;
-        page3: number;
+        stats: number;
     }
 }

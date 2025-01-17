@@ -8,14 +8,15 @@ export class TimeTrackingService {
   start: boolean = false;
   timer: any;
   seconds: number = 0;
-  timeTracked = this.timeTrackedFormat(this.seconds);
+  milliseconds : number = 0;
+  timeTracked = this.timeTrackedFormat(this.milliseconds);
   startTime: any;
 
 
   timerStart() {
     this.start = true;
     this.timer = setInterval(() => {
-      this.seconds++;
+      this.seconds ++;
     },1000);
   }
 
@@ -25,7 +26,7 @@ export class TimeTrackingService {
     const timeTracked = this.seconds;
     this.seconds = 0;
     return timeTracked;
-}
+  }
 
   timeTrackedFormat(seconds: number): string {
     let minutes = 0;

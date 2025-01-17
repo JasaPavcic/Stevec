@@ -1,7 +1,6 @@
-<h2>Login!</h2>
 
-
-<form [formGroup] = "loginForm" (ngSubmit) = "onLogin()">
+<form [formGroup] = "loginForm" (ngSubmit)="onLogin()">
+    <h2>Login</h2>
     <div>
         <label for="username">Username:</label>
         <input
@@ -10,6 +9,9 @@
         placeholder="Enter your username"
         required
         />
+    </div>
+    <div>
+        <button type="submit" [disabled]="!loginForm.valid">Login</button>
     </div>
 </form>
 

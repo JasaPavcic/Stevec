@@ -14,18 +14,12 @@ export class HomeComponent{
   username: string | null  = ''; 
   user: User | null = null;
 
-  constructor(private router: Router,private route: ActivatedRoute, private userService: UserService) {
-    // this.username = this.userService.getUsername();
-
-    // if (this.username) {
-    //   this.user = this.userService.createUser(this.username);
-    //   console.log('username:', this.user);
-    // }
-  }
+  constructor(private router: Router,private route: ActivatedRoute, private userService: UserService) {}
 
 
   ngOnInit(): void {
     this.username = this.userService.getUsername();
+    
 
     if (this.username) {
       const existingUser = this.userService.getUser(this.username);

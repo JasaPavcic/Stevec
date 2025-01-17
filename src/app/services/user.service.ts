@@ -22,7 +22,7 @@ export class UserService {
         timeSpent: {
           page1 : 0,
           page2: 0,
-          page3 : 0
+          stats : 0
         }
       };
       return newUser;
@@ -40,4 +40,7 @@ export class UserService {
   clearUser(user : User): void {
     localStorage.removeItem(user.username);
   }
+
+
+
 }

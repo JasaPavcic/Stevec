@@ -1,0 +1,68 @@
+/* Home Page Styles */
+.home-page {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    box-shadow: 0 4px 32px rgb(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #fff;
+  }
+  
+  h2 {
+    margin-top: 0;
+    color: #555;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+  }
+  
+  p {
+    font-size: 1.1rem;
+    color: #555;
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  
+  button {
+    background-color: #c5baa6;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    width: 30%; /* Button width set to 30% of the container */
+  }
+  
+  button:hover {
+    background-color: #a59f7d;
+  }
+  
+  button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .logout-btn {
+    background-color: #e84a5f; /* Red button for logout */
+    margin-top: 20px;
+    width: 100%;
+    font-size: 1.2rem;
+  }
+  
+  .logout-btn:hover {
+    background-color: #e3404b;
+  }
+  
+  .logout-btn:disabled {
+    background-color: #f0c0c0;
+    cursor: not-allowed;
+  }
+  
