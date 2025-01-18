@@ -9,23 +9,23 @@ export class TimeTrackingService {
   timer: any;
   seconds: number = 0;
   milliseconds : number = 0;
-  timeTracked = this.timeTrackedFormat(this.milliseconds);
+  timeTracked = this.timeTrackedFormat(this.seconds);
   startTime: any;
 
 
   timerStart() {
     this.start = true;
     this.timer = setInterval(() => {
-      this.seconds ++;
-    },1000);
+      this.milliseconds += 10;
+    },10);
   }
 
   timerStop(): number {
     clearInterval(this.timer);
     this.start = false;
-    const timeTracked = this.seconds;
-    this.seconds = 0;
-    return timeTracked;
+    const timeTracked = this.milliseconds;
+    this.milliseconds = 0;
+    return (timeTracked / 1000);
   }
 
   timeTrackedFormat(seconds: number): string {
