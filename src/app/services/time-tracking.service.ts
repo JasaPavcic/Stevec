@@ -1,32 +1,36 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, interval, Subscription } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class TimeTrackingService {
-
-  start: boolean = false;
-  timer: any;
-  seconds: number = 0;
-  milliseconds : number = 0;
-  timeTracked = this.timeTrackedFormat(this.seconds);
-  startTime: any;
-
+  milliseconds = 0;
+  timeTracked = 0;
+  private intervalSubscription: Subscription | null = null;
+  private timeSubject = new BehaviorSubject<number>(0);
 
   timerStart() {
-    this.start = true;
-    this.timer = setInterval(() => {
+    this.intervalSubscription = interval(10).subscribe(() => {
       this.milliseconds += 10;
-    },10);
+      this.timeSubject.next(this.milliseconds);
+    });
   }
 
   timerStop(): number {
-    clearInterval(this.timer);
-    this.start = false;
+    if (this.intervalSubscription) {
+      this.intervalSubscription.unsubscribe();
+    }
     const timeTracked = this.milliseconds;
     this.milliseconds = 0;
-    return (timeTracked / 1000);
+    return Math.round((timeTracked / 1000) * 100) / 100;
   }
+
+  getTimeUpdates() {
+    return this.timeSubject.asObservable(); 
+  }
+
 
   timeTrackedFormat(seconds: number): string {
     let minutes = 0;
@@ -40,6 +44,6 @@ export class TimeTrackingService {
         minutes++;
     }
     return ((hours < 10) ? "0" + hours : hours) + ":" + ((minutes < 10) ? "0" + minutes : minutes) + ":" + ((seconds < 10) ? "0" + seconds : seconds);
-}
+  }
 
 }

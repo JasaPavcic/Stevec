@@ -1,4 +1,4 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Router, RouterOutlet,ActivatedRoute } from '@angular/router';
 import { User } from '../../models/user.interface';
 import { UserService } from '../../services/user.service';
@@ -9,7 +9,7 @@ import { UserService } from '../../services/user.service';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent{
+export class HomeComponent implements OnInit{
 
   username: string | null  = ''; 
   user: User | null = null;

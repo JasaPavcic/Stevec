@@ -10,8 +10,8 @@
     </thead>
     <tbody>
       <tr *ngFor="let entry of user?.timeSpent | keyvalue">
-        <td>{{ entry.key }}</td>
-        <td>{{ entry.value }}</td>
+        <td>{{ entry.key === 'page1' ? 'Cat' : entry.key === 'page2' ? 'Dog' : entry.key }}</td>
+        <td>{{ entry.key === 'stats' ? formatTime(getTotalTime()) : formatTime(entry.value) }}</td>  
       </tr>
     </tbody>
 </table>

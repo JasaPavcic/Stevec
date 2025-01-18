@@ -1,18 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { TimeTrackingService } from '../../services/time-tracking.service';
 import { User } from '../../models/user.interface';
 
 @Component({
-  selector: 'app-page2',
+  selector: 'app-dog',
   imports: [],
   templateUrl: './page2.component.html',
   styleUrl: './page2.component.scss'
 })
-export class Page2Component {
+export class Page2Component implements OnInit,OnDestroy {
   
   username: string | null = '';
-    currentPage: string = '';
+    currentPage = '';
     user: User | null = null;
     timeTracked: number | null = null;
   

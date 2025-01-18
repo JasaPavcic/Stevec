@@ -1,11 +1,16 @@
 /* Home Page Styles */
 .home-page {
+  display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh; 
     max-width: 600px;
-    margin: 50px auto;
+    margin: 0 auto;
     padding: 20px;
     box-shadow: 0 4px 32px rgb(0, 0, 0, 0.1);
     border-radius: 8px;
     background-color: #fff;
+    box-sizing: border-box; 
   }
   
   h2 {
@@ -38,7 +43,7 @@
     cursor: pointer;
     border: none;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    width: 30%; /* Button width set to 30% of the container */
+    width: 30%;
   }
   
   button:hover {
@@ -51,10 +56,11 @@
   }
   
   .logout-btn {
-    background-color: #e84a5f; /* Red button for logout */
+    background-color: #e84a5f;
     margin-top: 20px;
     width: 100%;
     font-size: 1.2rem;
+    margin-top: auto; 
   }
   
   .logout-btn:hover {

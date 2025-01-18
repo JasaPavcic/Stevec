@@ -1,26 +1,29 @@
-import { Component} from '@angular/core';
+import { Component, OnDestroy, OnInit} from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { User } from '../../models/user.interface';
 import { TimeTrackingService } from '../../services/time-tracking.service';
 
+
+
+
 @Component({
-  selector: 'app-page1',
+  selector: 'app-cat',
   imports: [],
   templateUrl: './page1.component.html',
   styleUrl: './page1.component.scss'
 })
-export class Page1Component {
+export class Page1Component implements OnInit,OnDestroy{
 
   username: string | null = '';
-  currentPage: string = '';
+  currentPage = '';
   user: User | null = null;
   timeTracked: number | null = null;
 
   constructor(private userService: UserService, private timer: TimeTrackingService){
-    
   }
 
   ngOnInit(): void {
+
     this.username = this.userService.getUsername();
     this.timer.timerStart();
     

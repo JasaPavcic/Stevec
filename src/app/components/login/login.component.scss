@@ -21,18 +21,18 @@ label {
     color: #555;
   }
   input {
-    padding: 2px 8px; /* Add more padding for a nicer appearance */
-    height: 30px; /* Slightly increase the height for more comfort */
+    padding: 2px 8px;
+    height: 30px;
     border-radius: 8px;
     width: 50%;
-    border: 2px solid #ccc; /* Change border color to a softer tone */
-    background-color: #f9f9f9; /* Lighter background color */
+    border: 2px solid #ccc;
+    background-color: #f9f9f9;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 
     &:focus {
-      border-color: #c5baa6; /* Highlight the border when focused */
+      border-color: #c5baa6;
       outline: none;
-      box-shadow: 0 0 8px rgba(215, 203, 167, 0.5); /* Add focus shadow */
+      box-shadow: 0 0 8px rgba(215, 203, 167, 0.5); 
     }
   }
 
@@ -49,11 +49,11 @@ button {
     transition: background-color 0.3s ease;
   
     &:hover {
-      background-color: #a59f7d; /* Darker background on hover */
+      background-color: #a59f7d;
     }
   
     &:disabled {
-      background-color: #ccc; /* Lighter button color when disabled */
+      background-color: #ccc;
       cursor: not-allowed;
     }
   }
